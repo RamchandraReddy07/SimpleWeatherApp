@@ -61,7 +61,17 @@ console.log("API URl local",apiUrl);
 const url = `${apiUrl}?city=${inputVal}`;
 console.log("URL",url);
 fetch(url)
-  .then(response => response.json())
+  // .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`); // Check if the response is OK
+    }
+    return response.text(); // Get the response as text
+  })
+  .then(text => {
+    console.log("Raw response text:", text); // Log the raw response text
+    return JSON.parse(text); // Try parsing it as JSON
+  })
   .then(data => {
     const { main, name, sys, weather } = data;
     console.log("API DATA",data);
@@ -88,7 +98,8 @@ fetch(url)
     li.innerHTML = markup;
     list.appendChild(li);
   })
-  .catch(() => {
+  .catch((error) => {
+    console.error("Error fetching weather data:", error); 
     msg.textContent = "Please search for a valid city 😩";
   });
 
