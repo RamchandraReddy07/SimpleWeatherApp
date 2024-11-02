@@ -52,13 +52,14 @@ form.addEventListener("submit", e => {
 // const apiUrl = isProduction|| `http://localhost:3000/weather`;
 
 const apiUrl = window.location.hostname === 'localhost'
-  ? 'http://localhost:3000/weather' // Local development URL
-  : 'https://simple-weather-app-taupe.vercel.app/weather';
+  ? 'http://localhost:3000/api/weather' // Local development URL
+  : 'https://simple-weather-app-taupe.vercel.app/api/weather';
 
 
-
+console.log();
 console.log("API URl local",apiUrl);
 const url = `${apiUrl}?city=${inputVal}`;
+console.log("URL",url);
 fetch(url)
   .then(response => response.json())
   .then(data => {
