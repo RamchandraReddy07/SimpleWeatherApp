@@ -30,8 +30,8 @@ app.use((req, res, next) => {
 });
 
 console.log(API_KEY);
-app.get("/api/weather", async (req, res) => {
-//   console.log("Request",req);
+app.get("/weather", async (req, res) => {
+ console.log("Request",req);
   const { city } = req.query;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
   try {
