@@ -48,8 +48,14 @@ form.addEventListener("submit", e => {
   //ajax here
   // const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
-const isProduction = window.location.hostname !== "localhost"; // Adjust condition as needed
-const apiUrl = isProduction || `http://localhost:3000/weather`;
+// const isProduction = window.location.hostname !== "localhost"; // Adjust condition as needed
+// const apiUrl = isProduction|| `http://localhost:3000/weather`;
+
+const apiUrl = window.location.hostname === 'localhost'
+  ? 'http://localhost:3000/weather' // Local development URL
+  : 'https://simple-weather-app-taupe.vercel.app/weather';
+
+
 
 console.log("API URl local",apiUrl);
 const url = `${apiUrl}?city=${inputVal}`;
