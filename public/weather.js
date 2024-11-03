@@ -93,8 +93,8 @@ fetch(url)
     li.innerHTML = markup;
     list.appendChild(li);
   })
-  .catch((error) => {
-    console.error("Error fetching weather data:", error); 
+  .catch(() => {
+   
     msg.textContent = "Please search for a valid city 😩";
   });
 
