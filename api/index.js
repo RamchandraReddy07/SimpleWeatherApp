@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.API_KEY;
 
-logger.info('This is an info message');
+
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.combine(
@@ -25,7 +25,7 @@ app.listen(PORT, () => {
   logger.info(`Server running on port ${PORT}`);
 });
 
-
+logger.info('This is an info message');
 // const corsOptions = {
 //   credentials: true,
 //   origin: allowedOrigins,
