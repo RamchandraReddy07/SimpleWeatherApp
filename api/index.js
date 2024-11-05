@@ -7,9 +7,8 @@ dotenv.config({ path: 'config.env' });
 const app = express();
 const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.API_KEY;
-const winston = require('winston');
-// Middleware
-console.log("API_KEY",process.env.API_KEY);
+
+
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.combine(
@@ -21,6 +20,18 @@ const logger = winston.createLogger({
     new winston.transports.Console(),
   ],
 });
+
+app.listen(PORT, () => {
+  logger.info(`Server running on port ${PORT}`);
+});
+
+logger.info('This is an info message');
+// const corsOptions = {
+//   credentials: true,
+//   origin: allowedOrigins,
+//   methods: 'GET, POST, PUT, DELETE',
+//   allowedHeaders: 'Content-Type, Authorization, Cookie'
+// };
 app.use(cors());
 app.use(express.json());
 
