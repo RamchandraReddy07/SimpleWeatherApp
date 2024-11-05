@@ -272,4 +272,29 @@
   }
   
   
+  .city {
+    position: relative; /* To anchor the close button */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 8px; /* Positioning the button at the top-right */
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .close-btn:hover {
+    color: red;
+  }
+  
   
