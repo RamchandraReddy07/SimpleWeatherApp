@@ -45,6 +45,8 @@ app.get("/api/test", async(req, res) => {
   logger.info("In test method");
 });
 
+// Export the app for Vercel
+module.exports = app; 
 // // Start the server
 // app.listen(PORT, () => {
 //   logger.info(`Server running on port ${PORT}`);
