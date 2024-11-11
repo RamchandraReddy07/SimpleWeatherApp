@@ -76,7 +76,7 @@ form.addEventListener("submit", async (e) => {
 
 
 
-  const apiUrl = window.location.hostname === 'localhost' ? 'http://localhost:3002' : 'https://simple-weather-app-taupe.vercel.app';
+  const apiUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://simple-weather-app-taupe.vercel.app';
   const url = `${apiUrl}/api/getWeather?city=${encodeURIComponent(inputVal)}`;
 
   try {
